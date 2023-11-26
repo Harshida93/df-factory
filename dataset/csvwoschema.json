@@ -7,8 +7,7 @@
 		},
 		"parameters": {
 			"fileName": {
-				"type": "string",
-				"defaultValue": "Log.csv"
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -16,10 +15,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().fileName",
-					"type": "Expression"
-				},
+				"fileName": "Log.csv",
 				"fileSystem": "csv"
 			},
 			"columnDelimiter": ",",
