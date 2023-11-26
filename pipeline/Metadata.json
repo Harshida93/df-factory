@@ -35,6 +35,8 @@
 			{
 				"name": "ForEachCustomer",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Get Metadata1",
