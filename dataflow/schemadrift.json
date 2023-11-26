@@ -1,5 +1,5 @@
 {
-	"name": "schema drift",
+	"name": "schemadrift",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -25,9 +25,10 @@
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: false) ~> CSVwithoutschema",
 				"CSVwithoutschema sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
+				"     validateSchema: true,",
 				"     format: 'parquet',",
 				"     partitionFileNames:['ParquetWoSchema'],",
 				"     umask: 0022,",
