@@ -186,12 +186,14 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
-								"referenceName": "CustomerFolder",
+								"referenceName": "Customer",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"fileName": "Customer1.xlsx"
+								}
 							},
 							"fieldList": [
-								"childItems"
+								"columnCount"
 							],
 							"storeSettings": {
 								"type": "AzureBlobFSReadSettings",
@@ -206,6 +208,8 @@
 					{
 						"name": "ForEachCustomer",
 						"type": "ForEach",
+						"state": "Inactive",
+						"onInactiveMarkAs": "Succeeded",
 						"dependsOn": [
 							{
 								"activity": "Get Metadata1",
@@ -298,7 +302,6 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/CustomerFolder')]",
 				"[concat(variables('factoryId'), '/datasets/Customer')]",
 				"[concat(variables('factoryId'), '/datasets/DimCustomerSql')]"
 			]
