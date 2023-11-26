@@ -8,6 +8,9 @@
 		"ADLS_accountKey": {
 			"value": ""
 		},
+		"Synapse_connectionString": {
+			"value": ""
+		},
 		"ADLS_properties_typeProperties_url": {
 			"value": "https://adp203zsynapsesa.dfs.core.windows.net/"
 		}

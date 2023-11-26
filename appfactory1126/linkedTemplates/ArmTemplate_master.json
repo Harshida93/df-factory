@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ADLS'"
 		},
+		"Synapse_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Synapse'"
+		},
 		"ADLS_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adp203zsynapsesa.dfs.core.windows.net/"
@@ -44,6 +48,9 @@
 					},
 					"ADLS_accountKey": {
 						"value": "[parameters('ADLS_accountKey')]"
+					},
+					"Synapse_connectionString": {
+						"value": "[parameters('Synapse_connectionString')]"
 					},
 					"ADLS_properties_typeProperties_url": {
 						"value": "[parameters('ADLS_properties_typeProperties_url')]"
