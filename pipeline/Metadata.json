@@ -16,17 +16,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "Customer",
-						"type": "DatasetReference",
-						"parameters": {
-							"fileName": "Customer1.xlsx"
-						}
+						"referenceName": "CustomerFolder",
+						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"columnCount"
+						"childItems"
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
