@@ -16,15 +16,17 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "CustomerFolder",
-						"type": "DatasetReference"
+						"referenceName": "Customer",
+						"type": "DatasetReference",
+						"parameters": {
+							"fileName": "Customer1.xlsx"
+						}
 					},
 					"fieldList": [
-						"childItems"
+						"columnCount"
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
-						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -35,6 +37,8 @@
 			{
 				"name": "ForEachCustomer",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Get Metadata1",
