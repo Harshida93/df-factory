@@ -186,14 +186,12 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
-								"referenceName": "Customer",
+								"referenceName": "CustomerFolder",
 								"type": "DatasetReference",
-								"parameters": {
-									"fileName": "Customer1.xlsx"
-								}
+								"parameters": {}
 							},
 							"fieldList": [
-								"columnCount"
+								"childItems"
 							],
 							"storeSettings": {
 								"type": "AzureBlobFSReadSettings",
@@ -302,6 +300,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/CustomerFolder')]",
 				"[concat(variables('factoryId'), '/datasets/Customer')]",
 				"[concat(variables('factoryId'), '/datasets/DimCustomerSql')]"
 			]
