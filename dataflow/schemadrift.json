@@ -18,28 +18,28 @@
 						"referenceName": "ParquetWOSchema",
 						"type": "DatasetReference"
 					},
-					"name": "ParquetWOschema"
+					"name": "sink1"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "select1"
+				}
+			],
 			"scriptLines": [
-				"source(output(",
-				"          {Correlation id,Operation name,Status,Event category,Level,Time,Subscription,Event initiated by,Resource type,Resource group,Resource} as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: false) ~> CSVwithoutschema",
-				"CSVwithoutschema sink(allowSchemaDrift: true,",
-				"     validateSchema: true,",
+				"CSVwithoutschema select(skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
 				"     format: 'parquet',",
-				"     partitionFileNames:['ParquetWoSchema'],",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     partitionBy('hash', 1)) ~> ParquetWOschema"
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
