@@ -16,11 +16,8 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "csvwoschema",
-						"type": "DatasetReference",
-						"parameters": {
-							"fileName": "Log.csv"
-						}
+						"referenceName": "Customer",
+						"type": "DatasetReference"
 					},
 					"fieldList": [
 						"childItems"
