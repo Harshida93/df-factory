@@ -20,38 +20,6 @@
 					"url": "https://adp203zsynapsesa.blob.core.windows.net/csv/Customer1.xlsx",
 					"method": "GET"
 				}
-			},
-			{
-				"name": "Get Metadata1",
-				"type": "GetMetadata",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "csvwoschema",
-						"type": "DatasetReference",
-						"parameters": {
-							"fileName": "Log.csv"
-						}
-					},
-					"fieldList": [
-						"columnCount"
-					],
-					"storeSettings": {
-						"type": "AzureBlobFSReadSettings",
-						"enablePartitionDiscovery": false
-					},
-					"formatSettings": {
-						"type": "DelimitedTextReadSettings"
-					}
-				}
 			}
 		],
 		"annotations": []
