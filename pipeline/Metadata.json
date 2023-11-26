@@ -91,14 +91,8 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "Customer",
-									"type": "DatasetReference",
-									"parameters": {
-										"fileName": {
-											"value": "@item().Name",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "CustomerFolder",
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
