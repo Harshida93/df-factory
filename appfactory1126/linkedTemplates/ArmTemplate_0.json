@@ -337,6 +337,78 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/csvwithSchema')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLS",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "csv"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Correlation id",
+						"type": "String"
+					},
+					{
+						"name": "Operation name",
+						"type": "String"
+					},
+					{
+						"name": "Status",
+						"type": "String"
+					},
+					{
+						"name": "Event category",
+						"type": "String"
+					},
+					{
+						"name": "Level",
+						"type": "String"
+					},
+					{
+						"name": "Time",
+						"type": "String"
+					},
+					{
+						"name": "Subscription",
+						"type": "String"
+					},
+					{
+						"name": "Event initiated by",
+						"type": "String"
+					},
+					{
+						"name": "Resource type",
+						"type": "String"
+					},
+					{
+						"name": "Resource group",
+						"type": "String"
+					},
+					{
+						"name": "Resource",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ADLS')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/csvwoschema')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -650,7 +722,11 @@
 						"source(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     ignoreNoFilesFound: false) ~> CSVwithoutschema",
-						"CSVwithoutschema select(skipDuplicateMapInputs: true,",
+						"CSVwithoutschema select(mapColumn(",
+						"          each(match(true()),",
+						"               replace($$,' ','') = $$)",
+						"     ),",
+						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true) ~> select1",
 						"select1 sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
