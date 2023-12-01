@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "StagingtoTable",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -40,6 +40,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
+				"     purgeFiles: true,",
 				"     documentForm: 'documentPerLine') ~> StagingtoTable",
 				"StagingtoTable select(mapColumn(",
 				"          Average = average,",
