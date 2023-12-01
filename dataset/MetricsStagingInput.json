@@ -1,0 +1,18 @@
+{
+	"name": "MetricsStagingInput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "MetricsStagingInput"
+			}
+		},
+		"schema": {}
+	}
+}
