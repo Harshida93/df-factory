@@ -22,6 +22,10 @@
 		"ADLS_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adp203zsynapsesa.dfs.core.windows.net/"
+		},
+		"StorageEventTest_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/4e2012bc-5d83-45bd-bb9b-3526fa0377e8/resourceGroups/dp203/providers/Microsoft.Storage/storageAccounts/adp203zsynapsesa"
 		}
 	},
 	"variables": {
@@ -1094,6 +1098,37 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/StorageEventTest')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pipeline1",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/stagingmetricnew/blobs/",
+					"blobPathEndsWith": ".json",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('StorageEventTest_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline1')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/StagingtoTable')]",

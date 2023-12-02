@@ -17,6 +17,9 @@
 		"ADLS_properties_typeProperties_url": {
 			"value": "https://adp203zsynapsesa.dfs.core.windows.net/"
 		},
+		"StorageEventTest_properties_typeProperties_scope": {
+			"value": "/subscriptions/4e2012bc-5d83-45bd-bb9b-3526fa0377e8/resourceGroups/dp203/providers/Microsoft.Storage/storageAccounts/adp203zsynapsesa"
+		},
 		"containerUri": {
 			"value": ""
 		},
