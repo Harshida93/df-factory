@@ -489,7 +489,7 @@
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
 					"blobPathBeginsWith": "/stagingmetricnew/blobs/",
-					"blobPathEndsWith": ".json",
+					"blobPathEndsWith": ".csv",
 					"ignoreEmptyBlobs": true,
 					"scope": "[parameters('StorageEventTest_properties_typeProperties_scope')]",
 					"events": [
