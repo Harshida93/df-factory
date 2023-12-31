@@ -14,5 +14,6 @@
 				"fileSystem": "stagingmetricnew"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

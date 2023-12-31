@@ -32,7 +32,7 @@
 				"     ignoreNoFilesFound: false) ~> CSVwithoutschema",
 				"CSVwithoutschema select(mapColumn(",
 				"          each(match(true()),",
-				"               replace($$, ' ', '') = $$)",
+				"               replace($$,' ','') = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
