@@ -1,5 +1,10 @@
 {
 	"name": "appfactory1126",
+	"properties": {
+		"globalConfigurations": {
+			"PipelineBillingEnabled": "true"
+		}
+	},
 	"location": "canadacentral",
 	"identity": {
 		"type": "SystemAssigned",
