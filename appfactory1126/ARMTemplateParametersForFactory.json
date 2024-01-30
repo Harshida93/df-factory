@@ -8,13 +8,55 @@
 		"ADLS_accountKey": {
 			"value": ""
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"value": ""
+		},
 		"AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"Copycsv_accountKey": {
+			"value": ""
+		},
+		"Destination_DataLake_accountKey": {
+			"value": ""
+		},
+		"FromStorageCsv_connectionString": {
+			"value": ""
+		},
+		"Source_DataLake_accountKey": {
 			"value": ""
 		},
 		"Synapse_connectionString": {
 			"value": ""
 		},
+		"ToPoolDb_connectionString": {
+			"value": ""
+		},
 		"ADLS_properties_typeProperties_url": {
+			"value": "https://adp203zsynapsesa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adp203zsynapsesa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://adp203zsynapsesa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://adp203zsynapsesa.dfs.core.windows.net/"
+		},
+		"Copycsv_properties_typeProperties_url": {
+			"value": "https://adp203zsynapsesa.dfs.core.windows.net/"
+		},
+		"Destination_DataLake_properties_typeProperties_url": {
+			"value": "https://adp203zsynapsesa.dfs.core.windows.net/"
+		},
+		"Source_DataLake_properties_typeProperties_url": {
 			"value": "https://adp203zsynapsesa.dfs.core.windows.net/"
 		},
 		"StorageEventTest_properties_typeProperties_scope": {
