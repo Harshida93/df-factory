@@ -17,8 +17,8 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://adp203zsynapsesa.blob.core.windows.net/csv/Customer1.xlsx",
-					"method": "GET"
+					"method": "GET",
+					"url": "https://adp203zsynapsesa.blob.core.windows.net/csv/Customer1.xlsx"
 				}
 			}
 		],
