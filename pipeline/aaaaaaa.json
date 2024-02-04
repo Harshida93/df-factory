@@ -12,6 +12,16 @@
 				}
 			}
 		],
+		"parameters": {
+			"start": {
+				"type": "string",
+				"defaultValue": "@trigger().startTime"
+			},
+			"schedule": {
+				"type": "string",
+				"defaultValue": "@trigger().scheduledTime"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2024-01-30T20:10:01Z"
 	},

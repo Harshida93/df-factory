@@ -1,0 +1,28 @@
+{
+	"name": "trigger3",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "aaaaaaa",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"start": "@trigger().startTime",
+					"schedule": "@trigger().scheduledTime"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2024-02-04T07:37:00",
+				"timeZone": "Eastern Standard Time"
+			}
+		}
+	}
+}
