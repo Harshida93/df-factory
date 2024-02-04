@@ -34,6 +34,17 @@
 				}
 			}
 		],
+		"parameters": {
+			"a": {
+				"type": "string",
+				"defaultValue": "1"
+			}
+		},
+		"variables": {
+			"v": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2023-11-24T16:19:59Z"
 	},
